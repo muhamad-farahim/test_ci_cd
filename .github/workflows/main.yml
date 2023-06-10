@@ -13,7 +13,7 @@ jobs:
     - name: 📂 Sync source code
       uses: Burnett01/rsync-deployments@5.2.1
       with:
-        switches: -avzr --delete --exclude=".git" --exlude="public" --exclude="storage/app/public" --exclude=".github"
+        switches: -avzr --delete --exclude=".git" --exclude="public" --exclude="storage/app/public" --exclude=".github"
         path: /
         remote_path: ${{ secrets.DEPLOY_SOURCE_PATH }}
         remote_host: ${{ secrets.DEPLOY_HOST }}
