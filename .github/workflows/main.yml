@@ -21,7 +21,7 @@ jobs:
     - name: 📂 Copy Datas
       uses: Burnett01/rsync-deployments@5.2.1
       with:
-        switches: cp public_html/developmentv1.ninehustle.com/tests public_html/copy
+        rsh: cp public_html/developmentv1.ninehustle.com/tests public_html/copy
         path: /
         remote_path: ${{ secrets.DEPLOY_SOURCE_PATH }}
         remote_host: ${{ secrets.DEPLOY_HOST }}
