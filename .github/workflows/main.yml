@@ -22,7 +22,7 @@ jobs:
         username: ${{ secrets.DEPLOY_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
         port: ${{ secrets.DEPLOY_PORT }}
-        script: cp public_html/source_code/tests/feature public_html/copy
+        script: cp public_html/source_code/tests/Feature public_html/copy
   
     - name: Install Packages
       run: composer install
