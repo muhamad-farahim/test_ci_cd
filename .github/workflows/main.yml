@@ -14,10 +14,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with: 
         php-version: 8.1
-  
-    - name: Install Packages
-      run: composer install
-
+        
     - name: 📂 Copy Datas
       uses: Burnett01/rsync-deployments@5.2.1
       with:
@@ -28,6 +25,10 @@ jobs:
         remote_user: ${{ secrets.DEPLOY_USER }}
         remote_key: ${{ secrets.DEPLOY_KEY }}
         remote_port: ${{ secrets.DEPLOY_PORT }}
+  
+    - name: Install Packages
+      run: composer install
+
 
     - name: 📂 Sync source code
       uses: Burnett01/rsync-deployments@5.2.1
