@@ -24,7 +24,7 @@ jobs:
         port: ${{ secrets.DEPLOY_PORT }}
         script: |
           cp public_html/source_code/.env public_html/copy
-          cp public_html/source_code/storage/app/public public_html/copy
+          cp -r public_html/source_code/storage/app/public public_html/copy
   
     - name: Install Packages
       run: composer install
