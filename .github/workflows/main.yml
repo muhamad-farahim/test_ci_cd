@@ -22,7 +22,9 @@ jobs:
         username: ${{ secrets.DEPLOY_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
         port: ${{ secrets.DEPLOY_PORT }}
-        script: cp public_html/source_code/.env public_html/copy
+        script: |
+          cp public_html/source_code/.env public_html/copy
+          cp public_html/source_code/storage/app/public public_html/copy
   
     - name: Install Packages
       run: composer install
@@ -57,4 +59,6 @@ jobs:
         username: ${{ secrets.DEPLOY_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
         port: ${{ secrets.DEPLOY_PORT }}
-        script: mv public_html/copy/.env public_html/source_code
+        script: | 
+          mv public_html/copy/.env public_html/source_code
+          mv public_html/copy/public public_html/source_code/storage/app
